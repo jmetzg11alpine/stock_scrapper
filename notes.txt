@@ -1,0 +1,4 @@
+jmetzg11
+G3Ql9orCKrrZ1eKF
+mongodb+srv://jmetzg11:<password>@stocks.gqzzrrh.mongodb.net/?retryWrites=true&w=majority
+
