@@ -3,3 +3,5 @@ venv/
 workplace.ipynb 
 
 *.log
+
+.env

@@ -124,6 +124,9 @@ import certifi
 from datetime import datetime
 import random 
 import time
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
 logging.basicConfig(filename='error.log', level=logging.ERROR, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -168,6 +171,9 @@ def get_s_and_p(s_p, driver, db, collection_name, date):
         logging.error(f'error with {collection_name}, {str(e)}')
 
 def get_data(driver, sectors, sector_names, documents, date):
+    today_date = datetime.now().date()
+    formatted_date = today_date.strftime('%y-%m-%d')
+    print(f'---------------------------------{formatted_date}-------------------------------------')
     for sector, sector_name in zip(sectors, sector_names):
         print(f'{sector_name}------------')
         for ticker in sector:
@@ -182,7 +188,7 @@ def get_data(driver, sectors, sector_names, documents, date):
         get_change_average(documents, sector_name)
 
 
-    uri = "mongodb+srv://jmetzg11:G3Ql9orCKrrZ1eKF@stocks.gqzzrrh.mongodb.net/?retryWrites=true&w=majority"
+    uri = os.getenv('MONGO_URI')
     client = MongoClient(uri)
     db = client['stocks']
 
@@ -213,5 +219,6 @@ driver = webdriver.Chrome(options=chrome_options)
 
 
 get_data(driver, sectors, sector_names, documents, date)
+
 
 
