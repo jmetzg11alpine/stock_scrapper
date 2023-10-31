@@ -5,3 +5,6 @@ mongodb+srv://jmetzg11:<password>@stocks.gqzzrrh.mongodb.net/?retryWrites=true&w
 default key ring (the first time I made a git commit on the raspberry pi)
 no idea what it is 
 jmetzg11 <- parole <- in russian
+
+
+key ring thing that pops up wants the jmetzg11 github password (which is the same as the username)

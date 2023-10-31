@@ -5,3 +5,5 @@ workplace.ipynb
 *.log
 
 .env
+
+*.txt 
